@@ -1,5 +1,5 @@
 {
-  "name": "node-js-sample",
+  "name": "bitstarter",
   "version": "0.0.1",
   "description": "a sample node.js app for heroku",
   "main": "web.js",
@@ -15,7 +15,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/heroku/node-js-sample"
+    "url": "https://github.com/sebcagnon/bitstarter"
   },
   "keywords": [
     "node",
