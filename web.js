@@ -14,3 +14,8 @@ app.get('/', function(request, response) {
 app.get('/orders', function(request, response) {
   response.render("orders", {orders: 1});
 });
+
+var port = process.env.PORT || 8080;
+app.listen(port, function() {
+  console.log("Listening on " + port);
+});
