@@ -1,14 +1,16 @@
-var express = require('express');
-var fs = require('fs');
+var express = require('express')
+  , fs      = require('fs');
 
-var app = express.createServer(express.logger());
+var app = express();
+app.set('views', __dirname + '/views');
+app.set('view engine', 'ejs');
+app.set('port', process.env.PORT || 8080);
 
 app.get('/', function(request, response) {
   indexBuf = fs.readFileSync('index.html');
   response.send(indexBuf.toString());
 });
 
-var port = process.env.PORT || 8080;
-app.listen(port, function() {
-  console.log("Listening on " + port);
-});
+app.get('/orders', function(request, response) {
+  response.render("orders", {orders: 1});
+}
