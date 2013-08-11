@@ -1,5 +1,6 @@
 var express = require('express')
-  , fs      = require('fs');
+  , fs      = require('fs')
+  , http    = require('http');
 
 var app = express.createServer(express.logger());
 app.set('views', __dirname + '/views');
@@ -15,7 +16,6 @@ app.get('/orders', function(request, response) {
   response.render("orders", {orders: 1});
 });
 
-var port = process.env.PORT || 8080;
-app.listen(port, function() {
-  console.log("Listening on " + port);
+http.createServer(app).listen(app.get('port'), function() {
+      console.log("Listening on " + app.get('port'));
 });
